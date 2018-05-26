@@ -19,6 +19,7 @@ public class Skrzynka {
     public static void main(String[] args) {
         
         Ekran e = new Ekran();
+        //sdsd
         e.setVisible(true);
     }
     
