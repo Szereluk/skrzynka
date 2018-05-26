@@ -65,7 +65,7 @@ public class Ekran extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jtKontakty = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -82,23 +82,24 @@ public class Ekran extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jtKontakty.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTabbedPane2MouseClicked(evt);
+                jtKontaktyMouseClicked(evt);
             }
         });
 
-        jButton2.setText("WyÅ›lj");
+        jButton2.setText("Wyœlj");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("CzyÅ›Ä‡");
+        jButton3.setText("Czyœæ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -118,7 +119,7 @@ public class Ekran extends javax.swing.JFrame {
 
         jLabel1.setText("Odbiorca :");
 
-        jLabel2.setText("TytuÅ‚ :");
+        jLabel2.setText("Tytu³ :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,7 +172,7 @@ public class Ekran extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane2.addTab("Nowa wiadomoÅ›Ä‡", jPanel1);
+        jtKontakty.addTab("Nowa wiadomoœæ", jPanel1);
 
         jList1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -185,12 +186,14 @@ public class Ekran extends javax.swing.JFrame {
         jTextArea2.setWrapStyleWord(true);
         jScrollPane3.setViewportView(jTextArea2);
 
-        jButton1.setText("UsuÅ„ wiadomoÅ›Ä‡");
+        jButton1.setText("Usuñ wiadomoœæ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jButton5.setText("jButton5");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -200,7 +203,8 @@ public class Ekran extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
                 .addContainerGap())
@@ -214,114 +218,108 @@ public class Ekran extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Archiwum", jPanel2);
+        jtKontakty.addTab("Archiwum", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jtKontakty)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jtKontakty)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void jtKontaktyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtKontaktyMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        
-        String tytul="";
-        
-        String odbiorca="";
-        
-        String opis="";
-        
-        tytul = jTextField1.getText();
-        odbiorca = jTextField2.getText();
-        opis = jTextArea1.getText();
-        
-        if(tytul!="" && odbiorca!="")
-        {
-        Email e = new Email(tytul, odbiorca);
-        e.setOpis(opis);
-        lista.dodaj_mail(e);
-        
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextArea1.setText("");
-        }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
-        
         DefaultListModel<String> Listm = new DefaultListModel<>();
-        
+
         String[] maile = lista.getTit();
-        
+
         for (String info : maile) {
             Listm.addElement(info);
         }
-        
+
         jList1.setModel(Listm);
         jTextArea2.setText("");
-    }//GEN-LAST:event_jTabbedPane2MouseClicked
-
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        
-        int index = jList1.getSelectedIndex();
-              
-        jTextArea2.setText("");      
-        jTextArea2.setText(lista.getSzczegoly(index)); 
-        
-        
-    }//GEN-LAST:event_jList1MouseClicked
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-        
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextArea1.setText("");
-        
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jtKontaktyMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         int index = jList1.getSelectedIndex();
         lista.Usun(index);
 
         DefaultListModel<String> Listm = new DefaultListModel<>();
-        
+
         String[] maile = lista.getTit();
-        
+
         for (String info : maile) {
             Listm.addElement(info);
         }
-        
+
         jList1.setModel(Listm);
-        
+
         if(index-1>=0)
         {
             index=index-1;
             jList1.setSelectedIndex(index);
         }
-        
+
         jTextArea2.setText("");
-        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+
+        int index = jList1.getSelectedIndex();
+
+        jTextArea2.setText("");
+        jTextArea2.setText(lista.getSzczegoly(index));
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        String tytul="";
+
+        String odbiorca="";
+
+        String opis="";
+
+        tytul = jTextField1.getText();
+        odbiorca = jTextField2.getText();
+        opis = jTextArea1.getText();
+
+        if(tytul!="" && odbiorca!="")
+        {
+            Email e = new Email(tytul, odbiorca);
+            e.setOpis(opis);
+            lista.dodaj_mail(e);
+
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextArea1.setText("");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,6 +361,7 @@ public class Ekran extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
@@ -371,10 +370,10 @@ public class Ekran extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTabbedPane jtKontakty;
     // End of variables declaration//GEN-END:variables
 }
